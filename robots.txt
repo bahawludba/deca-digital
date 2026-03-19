@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://decadigitalconsulting.com/sitemap.xml

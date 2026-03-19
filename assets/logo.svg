@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" fill="none">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6C63FF"/>
+      <stop offset="100%" stop-color="#00D4AA"/>
+    </linearGradient>
+  </defs>
+  <!-- Geometric accent — tilted square -->
+  <rect x="2" y="8" width="24" height="24" rx="4" fill="url(#logoGrad)" transform="rotate(-8 14 20)"/>
+  <text x="36" y="30" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="28" fill="#EEEEF0">DECA</text>
+</svg>
