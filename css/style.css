@@ -844,6 +844,16 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
   transform: scale(0.9);
 }
 
+/* --- Noscript fallback: show everything if JS is disabled --- */
+noscript + style,
+.no-js .reveal,
+.no-js .reveal-left,
+.no-js .reveal-right,
+.no-js .reveal-scale {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 /* --- Responsive --- */
 @media (max-width: 968px) {
   .services-grid { grid-template-columns: 1fr; }
