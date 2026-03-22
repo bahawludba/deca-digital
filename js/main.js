@@ -383,6 +383,38 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   });
 
+  // --- Hero background fade on scroll ---
+  const heroBackgrounds = document.querySelectorAll('.gradient-mesh, .hero-video-wrap');
+  heroBackgrounds.forEach(el => {
+    gsap.to(el, {
+      opacity: 0,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: '80% top',
+        scrub: true
+      }
+    });
+  });
+
+  // --- Floating shapes parallax ---
+  gsap.utils.toArray('.floating-shape').forEach((shape, i) => {
+    const speed = 30 + (i % 4) * 20; // 30-90px range
+    const rotation = 10 + (i % 3) * 15; // 10-40deg range
+    gsap.to(shape, {
+      y: -speed,
+      rotation: rotation,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: shape.closest('section'),
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+  });
+
   // --- Cursor glow follow ---
   const cursorGlow = document.getElementById('cursorGlow');
   if (cursorGlow && window.matchMedia('(hover: hover)').matches) {

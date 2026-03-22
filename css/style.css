@@ -32,6 +32,7 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #0A0A0F;
 }
 
 body {
@@ -222,11 +223,198 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
 /* --- Background Pattern --- */
 .bg-pattern {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-image: radial-gradient(rgba(108, 99, 255, 0.08) 1px, transparent 1px);
   background-size: 32px 32px;
   pointer-events: none;
   z-index: 0;
+}
+
+/* --- Hero Video Background --- */
+.hero-video-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 10, 15, 0.35);
+  z-index: 1;
+}
+
+/* --- Gradient Mesh (Hero) --- */
+.gradient-mesh {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.mesh-blob {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.mesh-blob-1 {
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(108, 99, 255, 0.18) 0%, transparent 70%);
+  top: -15%;
+  right: -10%;
+  animation: meshDrift1 22s ease-in-out infinite;
+}
+
+.mesh-blob-2 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 212, 170, 0.12) 0%, transparent 70%);
+  bottom: -10%;
+  left: -5%;
+  animation: meshDrift2 26s ease-in-out infinite;
+}
+
+.mesh-blob-3 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(108, 99, 255, 0.1) 0%, rgba(0, 212, 170, 0.05) 50%, transparent 70%);
+  top: 30%;
+  left: 25%;
+  animation: meshDrift3 30s ease-in-out infinite;
+}
+
+.mesh-blob-4 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 212, 170, 0.1) 0%, transparent 70%);
+  top: -5%;
+  left: 40%;
+  animation: meshDrift4 24s ease-in-out infinite;
+}
+
+@keyframes meshDrift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-40px, 30px) scale(1.05); }
+  50% { transform: translate(-20px, 60px) scale(0.95); }
+  75% { transform: translate(30px, 20px) scale(1.08); }
+}
+
+@keyframes meshDrift2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(50px, -30px) scale(1.08); }
+  50% { transform: translate(30px, -60px) scale(0.96); }
+  75% { transform: translate(-20px, -40px) scale(1.04); }
+}
+
+@keyframes meshDrift3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(40px, -50px) scale(1.1); }
+  66% { transform: translate(-30px, 30px) scale(0.92); }
+}
+
+@keyframes meshDrift4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-60px, 40px) scale(1.06); }
+  66% { transform: translate(40px, -30px) scale(0.94); }
+}
+
+/* --- Floating Shapes (scroll-driven) --- */
+.floating-shape {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+}
+
+.shape-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.shape-ring {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid var(--primary);
+  background: transparent;
+}
+
+.shape-ring.accent { border-color: var(--accent); }
+
+.shape-diamond {
+  width: 18px;
+  height: 18px;
+  background: var(--accent);
+  transform: rotate(45deg);
+  border-radius: 3px;
+}
+
+.shape-line {
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), transparent);
+  border-radius: 1px;
+}
+
+.shape-plus {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}
+
+.shape-plus::before,
+.shape-plus::after {
+  content: '';
+  position: absolute;
+  background: var(--primary);
+  border-radius: 1px;
+}
+
+.shape-plus::before {
+  width: 100%;
+  height: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.shape-plus::after {
+  width: 2px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.shape-plus.accent::before,
+.shape-plus.accent::after { background: var(--accent); }
+
+@media (max-width: 768px) {
+  .floating-shape { display: none; }
+  .mesh-blob { opacity: 0.5; }
 }
 
 /* --- Hero --- */
@@ -894,7 +1082,7 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
 .service-visual::before {
   content: '';
   position: absolute;
-  inset: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background-image: radial-gradient(rgba(108, 99, 255, 0.06) 1px, transparent 1px);
   background-size: 24px 24px;
   pointer-events: none;
@@ -904,7 +1092,7 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
 .service-visual::after {
   content: '';
   position: absolute;
-  inset: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background: linear-gradient(135deg, rgba(108,99,255,0.05), rgba(0,212,170,0.05));
   z-index: 0;
 }
@@ -1361,6 +1549,7 @@ noscript + style,
   .nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
   .hero-buttons { flex-direction: column; align-items: flex-start; }
+  .hero-video-wrap { display: none; }
 
   .stats-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
 

@@ -196,9 +196,18 @@
 
   <!-- Hero -->
   <section class="hero">
-    <div class="bg-pattern"></div>
-    <div class="hero-glow hero-glow-1"></div>
-    <div class="hero-glow hero-glow-2"></div>
+    <div class="hero-video-wrap">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="assets/hero-bg-2-loop.mp4" type="video/mp4">
+      </video>
+      <div class="hero-video-overlay"></div>
+    </div>
+    <div class="gradient-mesh">
+      <div class="mesh-blob mesh-blob-1"></div>
+      <div class="mesh-blob mesh-blob-2"></div>
+      <div class="mesh-blob mesh-blob-3"></div>
+      <div class="mesh-blob mesh-blob-4"></div>
+    </div>
     <div class="container">
       <div class="hero-inner">
         <div class="hero-content">
@@ -293,7 +302,10 @@
   </section>
 
   <!-- Services -->
-  <section class="services" id="services">
+  <section class="services" id="services" style="position:relative;">
+    <div class="floating-shape shape-ring" style="top:10%;right:8%;opacity:0.12;"></div>
+    <div class="floating-shape shape-circle" style="top:40%;left:5%;opacity:0.15;"></div>
+    <div class="floating-shape shape-diamond" style="bottom:15%;right:12%;opacity:0.08;"></div>
     <div class="container">
       <p class="section-label reveal">What We Do</p>
       <h2 class="section-title reveal">Everything you need to<br><span class="text-gradient">dominate digitally</span></h2>
@@ -356,6 +368,8 @@
   <!-- Stats -->
   <section class="stats" style="position:relative;">
     <div class="bg-pattern"></div>
+    <div class="floating-shape shape-plus" style="top:20%;left:6%;opacity:0.1;"></div>
+    <div class="floating-shape shape-line" style="bottom:25%;right:8%;opacity:0.12;"></div>
     <div class="container">
       <div class="stats-grid">
         <div class="stat-item reveal">
@@ -381,6 +395,8 @@
   <!-- Testimonials -->
   <section class="testimonials" id="testimonials" style="position:relative;">
     <div class="bg-pattern"></div>
+    <div class="floating-shape shape-ring accent" style="top:15%;right:5%;opacity:0.1;width:40px;height:40px;"></div>
+    <div class="floating-shape shape-circle" style="bottom:20%;left:4%;opacity:0.12;width:8px;height:8px;background:var(--accent);"></div>
     <div class="container">
       <p class="section-label reveal">Testimonials</p>
       <h2 class="section-title reveal">Trusted by founders<br><span class="text-gradient">building the future</span></h2>
@@ -450,7 +466,9 @@
   </section>
 
   <!-- FAQ Section (SEO-rich, matches FAQ schema) -->
-  <section class="faq-section" id="faq">
+  <section class="faq-section" id="faq" style="position:relative;">
+    <div class="floating-shape shape-plus accent" style="top:12%;right:10%;opacity:0.08;"></div>
+    <div class="floating-shape shape-line" style="bottom:18%;left:6%;opacity:0.1;transform:rotate(-30deg);"></div>
     <div class="container">
       <p class="section-label reveal">FAQ</p>
       <h2 class="section-title reveal">Frequently asked <span class="text-gradient">questions</span></h2>
@@ -481,7 +499,9 @@
   </section>
 
   <!-- CTA -->
-  <section class="cta-section">
+  <section class="cta-section" style="position:relative;">
+    <div class="floating-shape shape-diamond" style="top:20%;left:8%;opacity:0.06;width:14px;height:14px;"></div>
+    <div class="floating-shape shape-ring" style="bottom:25%;right:6%;opacity:0.08;width:28px;height:28px;"></div>
     <div class="container">
       <div class="cta-box reveal-scale">
         <h2>Ready to <span class="text-gradient">level up</span>?</h2>

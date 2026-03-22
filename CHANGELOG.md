@@ -4,6 +4,18 @@ All notable changes to the Deca Digital website will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.3.0] - 2026-03-22
+
+### Added
+- Hero background video with looping abstract tech animation
+- Animated gradient mesh background effect in hero section
+- Scroll-driven floating geometric shapes (parallax elements) throughout page
+- Set `html` background color to match body for seamless edge-to-edge rendering
+
+### Changed
+- Hero section now features a fullscreen background video (`hero-bg-2-loop.mp4`) with dark overlay
+- Updated hero video container to use `right/bottom` positioning instead of `100vw` to avoid scrollbar gap
+
 ## [1.2.0] - 2026-03-22
 
 ### Added
